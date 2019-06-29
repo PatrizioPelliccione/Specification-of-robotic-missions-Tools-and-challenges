@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<layout chosenLayoutAlgorithm="4" horizontalLayout="false">
+    <struct>
+        <feature collapsed="true" name="Actions"/>
+        <feature collapsed="true" name="Concepts"/>
+        <feature collapsed="true" name="SensorReadings"/>
+        <feature collapsed="true" name="LanguageConcepts"/>
+        <feature collapsed="true" name="FileAccess"/>
+        <feature collapsed="true" name="MissionDeclaraction"/>
+        <feature collapsed="true" name="Language"/>
+    </struct>
+    <constraints/>
+</layout>

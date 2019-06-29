@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="Language">
+            <alt abstract="true" mandatory="true" name="LanguageConcepts">
+                <or abstract="true" name="ControlFlow">
+                    <feature name="conditionals_selection"/>
+                    <feature name="loop_for_while_forever"/>
+                    <feature name="interrupts_wait"/>
+                    <feature name="multithreading_fork"/>
+                </or>
+                <or abstract="true" name="Modularity">
+                    <feature name="Modules"/>
+                    <feature name="Functions"/>
+                    <feature name="Components"/>
+                </or>
+                <or abstract="true" name="VariableDataTypes">
+                    <feature name="PrimitiveTypes"/>
+                    <feature name="CompoundTypes"/>
+                </or>
+                <feature abstract="true" name="Eventsupport"/>
+                <or abstract="true" name="ReadSensor">
+                    <feature name="Temperature"/>
+                    <feature name="Llight"/>
+                    <feature name="Touch"/>
+                    <feature name="Infrared"/>
+                    <feature name="Color"/>
+                    <feature name="Gyro"/>
+                    <feature name="Ultrasonic"/>
+                    <feature name="Sound"/>
+                    <feature name="Timer"/>
+                    <feature name="Compass"/>
+                    <feature name="Accelerometer"/>
+                    <feature name="Gesture_faceDetector_SpeechRecognizer_MarkSensor"/>
+                    <feature name="Others_MotorRotation_brickButton_EnergyMeter_MotionDetector"/>
+                </or>
+                <and abstract="true" name="ControlFlowParadigm">
+                    <feature name="ReactiveControl"/>
+                    <feature name="Imperative"/>
+                    <feature name="GoalOriented"/>
+                </and>
+                <alt abstract="true" name="Actions">
+                    <and abstract="true" name="Communication">
+                        <and abstract="true" name="WithHumans">
+                            <feature name="Text"/>
+                            <feature name="Video"/>
+                            <feature name="Audio"/>
+                        </and>
+                        <and abstract="true" name="WithAgents">
+                            <or abstract="true" name="CommunicationStyle">
+                                <feature name="TupleSpace"/>
+                                <feature name="PublishSubscribe"/>
+                                <feature name="MessagePassing"/>
+                            </or>
+                        </and>
+                    </and>
+                    <or abstract="true" name="MovementActions">
+                        <and abstract="true" name="absolute">
+                            <feature name="map_coordinates"/>
+                        </and>
+                        <or abstract="true" name="Relative">
+                            <feature name="direction"/>
+                            <feature name="distance"/>
+                            <feature name="time"/>
+                        </or>
+                    </or>
+                    <and abstract="true" name="Actuation">
+                        <or abstract="true" name="TooDetailed">
+                            <feature name="DisplayClearDisplay"/>
+                            <feature name="MoveMotorDrive"/>
+                            <feature name="SteeringTurn"/>
+                            <feature name="MotorMovements"/>
+                            <feature name="Grasp"/>
+                            <feature name="StatusLight"/>
+                            <feature name="AudioPlay"/>
+                            <feature name="LightOnOff"/>
+                            <feature name="Write"/>
+                            <feature name="MoveWalk"/>
+                        </or>
+                    </and>
+                    <or abstract="true" name="ActionType">
+                        <feature name="Instantaneous"/>
+                        <feature name="Continuous"/>
+                        <and name="TimedExecution">
+                            <feature name="Duration_start_stopTime"/>
+                        </and>
+                    </or>
+                </alt>
+                <feature name="ExceptionHandling">
+                    <description>
+•exception handling; try/catch/finally, or throw; actionerror, animations not loaded, cannot place objects on this, connection aborted, connection check failed, connection error, no devices found, not pickupable, robot busy
+</description>
+                </feature>
+                <and abstract="true" name="FileAccess">
+                    <feature name="ReadWrite"/>
+                    <feature name="CloseDelete"/>
+                </and>
+                <and abstract="true" name="FunctionLibrary">
+                    <feature name="ArithmeticFunctions"/>
+                    <feature name="StringOperations"/>
+                    <feature name="ComplexAlgorithms"/>
+                </and>
+                <and abstract="true" name="MultiThreading">
+                    <feature name="Style"/>
+                    <feature name="MultiCoreSupport"/>
+                </and>
+            </alt>
+            <and abstract="true" name="Notation">
+                <feature name="Textual"/>
+                <and abstract="true" name="Graphical">
+                    <feature name="GraphBased"/>
+                    <feature name="BlocklyBased"/>
+                </and>
+            </and>
+            <or abstract="true" mandatory="true" name="Semantics">
+                <feature name="CompileCodeGeneration"/>
+                <feature name="Interpreted"/>
+            </or>
+            <and abstract="true" name="LanguageParadigm">
+                <feature name="DSL"/>
+            </and>
+            <and abstract="true" name="Extension">
+                <feature name="ScriptingSupport"/>
+                <feature name="AddLanguageConcepts"/>
+            </and>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>

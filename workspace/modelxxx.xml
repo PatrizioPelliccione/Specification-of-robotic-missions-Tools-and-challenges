@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="RMSE">
+            <or abstract="true" mandatory="true" name="Editor">
+                <or abstract="true" name="EditingModes">
+                    <feature name="FreeForm"/>
+                    <feature name="Projectional"/>
+                </or>
+                <or abstract="true" name="SemanticServices">
+                    <feature name="AutoComplete"/>
+                    <feature name="HelpText"/>
+                    <feature name="LineHelp"/>
+                    <feature name="PopUpHelp"/>
+                </or>
+                <or abstract="true" name="SyntacticServices">
+                    <feature name="CodeColorization"/>
+                    <feature name="ErrorIndicators"/>
+                    <feature name="syntax_highlighting"/>
+                </or>
+            </or>
+            <and abstract="true" mandatory="true" name="Language">
+                <or abstract="true" mandatory="true" name="LanguageConcepts">
+                    <or abstract="true" name="ControlFlow">
+                        <feature name="conditionals_selection"/>
+                        <feature name="loop_for_while_forever"/>
+                        <feature name="interrupts_wait"/>
+                        <feature name="multithreading_fork"/>
+                    </or>
+                    <or abstract="true" name="Modularity">
+                        <feature name="modules"/>
+                        <feature name="functions"/>
+                    </or>
+                    <and abstract="true" name="Time">
+                        <feature name="Duration_start_stopTime"/>
+                    </and>
+                    <and abstract="true" name="DataAbstractions">
+                        <or abstract="true" name="operations">
+                            <feature name="arithmetic"/>
+                            <feature name="string"/>
+                        </or>
+                        <or abstract="true" name="Data_types">
+                            <feature name="primitive"/>
+                            <feature name="compount"/>
+                        </or>
+                    </and>
+                    <or abstract="true" name="RobotMovements">
+                        <and abstract="true" name="absolute">
+                            <feature name="map_coordinates"/>
+                        </and>
+                        <or abstract="true" name="Relative">
+                            <feature name="direction"/>
+                            <feature name="distance"/>
+                            <feature name="time"/>
+                        </or>
+                    </or>
+                    <alt abstract="true" name="Actions">
+                        <and abstract="true" name="Communication">
+                            <and abstract="true" name="Environment">
+                                <or abstract="true" name="SensorReadings">
+                                    <feature name="Temperature"/>
+                                    <feature name="Llight"/>
+                                    <feature name="Touch"/>
+                                    <feature name="Infrared"/>
+                                    <feature name="Color"/>
+                                    <feature name="Gyro"/>
+                                    <feature name="Ultrasonic"/>
+                                    <feature name="Sound"/>
+                                    <feature name="Timer"/>
+                                    <feature name="Compass"/>
+                                    <feature name="Accelerometer"/>
+                                    <feature name="Gesture_faceDetector_SpeechRecognizer_MarkSensor"/>
+                                    <feature name="Others_MotorRotation_brickButton_EnergyMeter_MotionDetector"/>
+                                </or>
+                                <and abstract="true" name="Events">
+                                    <feature name="ObstacleDetection"/>
+                                    <feature name="FaceRecognition"/>
+                                    <feature name="ReachTargetLocation"/>
+                                </and>
+                            </and>
+                            <and abstract="true" name="WithHumans">
+                                <feature name="Text"/>
+                                <feature name="Video"/>
+                                <feature name="Audio"/>
+                            </and>
+                            <and abstract="true" name="WithAgents">
+                                <and abstract="true" name="CommunicationStyle">
+                                    <feature name="TupleSpace"/>
+                                    <feature name="PublishSubscribe"/>
+                                    <feature name="MessagePassing"/>
+                                </and>
+                            </and>
+                        </and>
+                        <and abstract="true" name="Actuation">
+                            <or abstract="true" name="TooDetailed">
+                                <feature name="DisplayClearDisplay"/>
+                                <feature name="MoveMotorDrive"/>
+                                <feature name="SteeringTurn"/>
+                                <feature name="MotorMovements"/>
+                                <feature name="Grasp"/>
+                                <feature name="StatusLight"/>
+                                <feature name="AudioPlay"/>
+                                <feature name="LightOnOff"/>
+                                <feature name="Write"/>
+                                <feature name="MoveWalk"/>
+                            </or>
+                        </and>
+                        <and abstract="true" name="ActionType">
+                            <feature name="Instantaneous"/>
+                            <feature name="Continuous"/>
+                        </and>
+                    </alt>
+                    <or abstract="true" name="MissionDeclaraction">
+                        <feature name="DeclarativeGoal"/>
+                        <feature name="ImperativeAction"/>
+                    </or>
+                    <feature name="ExceptionHandling">
+                        <description>
+•exception handling; try/catch/finally, or throw; actionerror, animations not loaded, cannot place objects on this, connection aborted, connection check failed, connection error, no devices found, not pickupable, robot busy
+</description>
+                    </feature>
+                    <and abstract="true" name="FileAccess">
+                        <feature name="ReadWrite"/>
+                        <feature name="CloseDelete"/>
+                    </and>
+                </or>
+                <and abstract="true" name="Notation">
+                    <feature name="Textual"/>
+                    <feature name="Graphical"/>
+                </and>
+                <or abstract="true" mandatory="true" name="Semantics">
+                    <feature name="CompileCodeGeneration"/>
+                    <feature name="Interpreted"/>
+                </or>
+                <or abstract="true" name="LanguageParadigm">
+                    <feature name="DSL"/>
+                    <feature name="GPL"/>
+                    <feature name="StructuredLanguage"/>
+                </or>
+                <and abstract="true" name="Entension">
+                    <feature name="AddBlock"/>
+                    <feature name="EditBlock"/>
+                    <feature name="DeletBlock"/>
+                </and>
+            </and>
+            <or abstract="true" name="Simulator">
+                <feature name="SingleRobot"/>
+                <feature name="MultipleRobots"/>
+            </or>
+            <and abstract="true" name="Debugging">
+                <or abstract="true" mandatory="true" name="Concepts">
+                    <feature name="DisplaySensorReadings"/>
+                    <feature name="ExecutionTrace_soundAndPrintTextBetweenBlocks"/>
+                    <feature name="BreakPoints"/>
+                </or>
+                <feature name="LoggingData"/>
+            </and>
+            <or abstract="true" mandatory="true" name="SpecificationTime">
+                <feature name="RunTime"/>
+                <feature name="DesignTime"/>
+            </or>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>

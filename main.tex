@@ -1,0 +1,172 @@
+\documentclass[sigplan,anonymous]{acmart} %,review
+
+
+%\usepackage[colorlinks=true,urlcolor=black]{hyperref}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage[xcolor=orange]{changes}
+\definechangesauthor[name={Claudio Menghi},color=orange]{CM}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\usepackage{xspace}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage{graphicx} % for pdf, bitmapped graphics files
+\usepackage{verbatim}
+\usepackage[export]{adjustbox}
+\usepackage{comment}
+\usepackage{ifthen}
+\usepackage{amssymb}
+\usepackage{threeparttable}
+\usepackage{tabu}
+\usepackage{array}
+\newboolean{showcomments}
+\setboolean{showcomments}{true} % toggle to show or hide comments
+\ifthenelse{\boolean{showcomments}}
+  {\newcommand{\nb}[2]{
+    \fcolorbox{gray}{yellow}{\bfseries\sffamily\scriptsize#1}
+    {\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
+   }
+   \newcommand{\version}{\emph{\scriptsize$-$working$-$}}
+  }
+  {\newcommand{\nb}[2]{}
+   \newcommand{\version}{}
+  }
+%\ifthenelse{\boolean{showcomments}}
+%  {\newcommand{\ts}[4]{
+%    \fcolorbox{black}{green}{\bfseries\sffamily\scriptsize#1 #2 - (Resp: \textit{#3})}
+%    {\sf\small$\blacktriangleright$\textit{#4}$\blacktriangleleft$}
+%   }
+%  }
+%   {\newcommand{\ts}[2]{}
+%  }    
+\newcommand\tb[1]{\nb{Thorsten}{#1}}
+\newcommand\engineer[1]{\nb{Engineer}{#1}}
+\newcommand\claudio[1]{\nb{Claudio}{#1}}
+\newcommand\swaib[1]{\nb{Swaib}{#1}}
+\newcommand\patrizio[1]{\nb{Patrizio}{#1}}
+
+\newcommand\parhead[1]{\vspace{.26mm}\noindent\textbf{{#1}}}
+\newcommand\parheadit[1]{\vspace{.26mm}\noindent\textit{{#1}}}
+\newcommand{\secref}[1]{Sec.\,\ref{#1}}
+\newcommand{\figref}[1]{Fig.\,\ref{#1}}
+\newcommand{\Figref}[1]{Figure\,\ref{#1}}
+\newcommand{\tabref}[1]{Table\,\ref{#1}}
+\newcommand{\lstref}[1]{Listing\,\ref{#1}}
+
+
+\newcommand{\picaxe}{PICAXE\xspace}
+\newcommand{\easyc}{EasyC\xspace}
+\newcommand{\edison}{Edison software\xspace}
+\newcommand{\ardublockly}{Ardublockly\xspace}
+\newcommand{\openroberta}{Open Roberta\xspace}
+\newcommand{\arcbotics}{Arcbotics' SparkiDuino\xspace}
+\newcommand{\missionlab}{MissionLab\xspace}
+\newcommand{\flyaq}{FLYAQ\xspace}
+\newcommand{\tivipe}{TiViPE\xspace}
+\newcommand{\aseba}{Aseba\xspace}
+\newcommand{\sphero}{Sphero\xspace}
+\newcommand{\vex}{VEX Coding Studio\xspace}
+\newcommand{\robotmesh}{Robot Mesh Studio\xspace}
+\newcommand{\trik}{TRIK Studio\xspace}
+\newcommand{\makeblock}{Makeblock 5\xspace}
+\newcommand{\metabot}{Metabot\xspace}
+\newcommand{\marty}{Marty software\xspace}
+\newcommand{\tello}{Tello Edu App\xspace}
+\newcommand{\codelab}{Code Lab\xspace}
+\newcommand{\lego}{LEGO Mindstorms EV3\xspace}
+\newcommand{\choregraphe}{Choregraphe\xspace}
+\newcommand{\blocklyprop}{BlocklyPro\xspace}
+\newcommand{\ozoblockly}{Ozoblockly\xspace}
+\newcommand{\minibloq}{MiniBloq\xspace}
+\newcommand{\turtlebot}{Turtlebot3-blockly\xspace}
+\newcommand{\makecode}{Makecode\xspace}
+\newcommand{\scratchev}{Scratch Ev3\xspace}
+\newcommand{\enchanting}{Enchanting\xspace}
+\newcommand{\robotc}{RobotC\xspace}
+
+\usepackage[normalem]{ulem} % for \sout
+\usepackage{xcolor}
+\newcommand{\ra}{$\rightarrow$}
+\newcommand{\ugh}[1]{\textcolor{red}{\uwave{#1}}} % please rephrase
+\newcommand{\ins}[1]{\textcolor{blue}{\uline{#1}}} % please insert
+\newcommand{\del}[1]{\textcolor{red}{\sout{#1}}} % please delete
+\newcommand{\chg}[2]{\textcolor{red}{\sout{#1}}{\ra}\textcolor{blue}{\uline{#2}}} % please change
+
+\copyrightyear{2019}
+\acmYear{2019}
+%\setcopyright{acmlicensed}
+\acmConference[SLE'19]{12th International Conference on Software Language Engineering}{October 20--22, 2019}{Athens, Greece}
+%\acmBooktitle{23rd International Systems and Software Product Line Conference - Volume A (SPLC '19), September 9--13, 2019, Paris, France}
+\acmPrice{15.00}
+%\acmDOI{10.1145/3336294.3336302}
+%\acmISBN{978-1-4503-7138-4/19/09}
+
+
+\begin{abstract}
+Mobile robots are becoming increasingly important, fulfilling missions that support our everyday life. Hardcoding these missions is usually not feasible, given the uncertainty of the tasks the robots, or teams of robots, should execute.
+Flexibility in programming such robots is necessary, which led to the proposal of many different languages enabling end-users to program robots. In fact, almost any commercial robot is equipped with a language-oriented environment that allows end users to specify missions.
+
+Our long-term goal is to build better languages, easing the specification of missions, ideally on a higher abstraction level. To this end, we need to improve our empirical understanding of the current state-of-the art of such languages and their environments. In this paper, we contribute in this direction. We present a survey of 29 mission specification environments for mobile robots that come with a visual, end-user-oriented language.
+%A lot of work is being done in enabling end-users to flexibly specify robot missions. However it is not clear what features are offered in these environments.
+We explore the design space of these languages and their environments, identify their concepts, and organize them as features in a feature model.
+%We find that the majority of environments rely on projectional editing as opposed to parser-based editing, with imperative control flow paradigm, minimal interpretive semantics, and bare closeness of mapping to non-robotic and non-software engineering domains.
+We believe that our results are valuable to practitioners and researchers designing the next generation of mission specification languages in the vibrant domain of mobile robots.
+
+\end{abstract}
+\begin{document}
+
+
+
+\title{The Design Space of Visual Languages\\for Specifying Robotic Missions}
+%\subtitle{for specifying Robotic Missions}
+%A Survey of Mission Specification Environments for Mobile Robots
+
+\renewcommand{\shorttitle}{Design Space of Visual Languages for Specifying Robotic Missions}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{introduction}
+\input{background}
+\input{method}
+\input{environments}
+\input{results}
+\input{discussion}
+\input{literature}
+\input{validity}
+\input{conclusion}
+
+
+%\addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+%\section*{APPENDIX}
+
+\input{tables/envtable.tex}
+
+%Appendixes should appear before the acknowledgment.
+
+%\section*{ACKNOWLEDGMENT}
+
+%The preferred spelling of the word ÒacknowledgmentÓ in America is without an ÒeÓ after the ÒgÓ. Avoid the stilted expression, ÒOne of us (R. B. G.) thanks . . .Ó  Instead, try ÒR. B. G. thanksÓ. Put sponsor acknowledgments in the unnumbered footnote on the first page.
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{robotics1}
+
+
+\end{document}

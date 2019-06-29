@@ -1,0 +1,32 @@
+\section{Discussion}
+%\swaib{what environments are in literature but not captured by the study? What are the features expected but not found in the environments studied?} \tb{We might also discuss the features we think are missing or underrepresented, but this would just be a discussion, nothing for which we can define a research question that we systematically answer.}
+
+
+\tb{move paragraph to S.4, give the numbers when reporting the results}
+The language sub-feature, figure  \ref{fig:languagefeatures}, identifies five features from which four are mandatory: language concepts, notation, semantics and language paradigm. While the extension feature (21/29) is an optional feature. Some language support extension of the language functionalities by any user especially those which are open-source  while other do not.
+
+\tb{move paragraph to S.4, give the numbers when reporting the results}
+In Language concepts feature, figure \ref{sec:langconcepts}, we identified eleven sub-features, from which three are considered mandatory: control flow, actions and control flow paradigm . While modularity (17/29), variable data type (25/29), event support (24/29), read sensor (26/29), exception handling (3/29), file access (7/29), function library (24/29) and multithreading (8/29) are considered optional features. Without the optional features, the language can still support mission specification, however we did not find a situation where all the optional features do not exist in a particular language.
+
+%Robotic mission describes robot behavior over time and space, as a dynamic system, where behavior is action under specified circumstances. The circumstances can be continuous like video streaming or instantaneous as states or phases of the mission. 
+Most end-user programming languages provide either graphical notation or programming by demonstration. However in graphical environments, it is still hard for end-users to define new behavioral primitives.%~\cite{Bravo2018}. 
+ According to Bravo et al. ~\cite{Bravo2018}, the following are some of the features expected in mission specification environments; both visual and demonstration programming abilities in specification environments, environments ability to support multiple robot mission specifications, collaborative specification environment where more than one users can concurrently specify a mission, ability for end-users to modify and or create new behavioral primitives. 
+ In the environments in this study, mechatronic constructs for motor \& sensor specifications and programming constructs like control flows have reasonably matured in graphical notations, making it easy for end-users to easily program missions. However, more work is needed to match the flexibility of robot hardware to end-user domain model in farming, environmental management, personal assistance among other domains to fully achieve end-user programming in robotics. The complexity in the algorithms for programming by demonstration and the rigorous and tiring process of training the robot does not make it easy for end-user to flexibly program robot for tasks of everyday life.
+%\noindent
+ %Dynamic systems' behavior descriptors are time and space. It is the motion through state/phase space.
+%Therefore a mobile autonomous robot mission is seen as dynamic system that interacts with its environment over time. %In an effort to understand what can be specified in a robotic mission (RQ1), the following can be considered as robot behavior parameters;
+% \begin{itemize}
+% \item Mission goal; to carry all cups from dining table to kitchen table
+% \item Task;the primitive actions pick a cup from location A table 1, move to location B release the cup on table 2.
+% \item Repeat task until [constrain] or not
+% \item Constrain; time, sequence of events, number of cups, presence or absence of an object or situation,..].
+% \item preconditions to start a mission or a task; readiness test
+% \item Location; home, mission start/stop locations, action locations
+% \item Required actuators for the actions mentioned in the task;grasp - hand, detect cup - sensor or camera.
+% \item Performance indicator; user acceptance parameters or indicators
+% \end{itemize}
+%From the study interestingly the following where identified as mission specification parameters; ... Users can only specify at high level as robotic software engineers generate other requirements to make the mission specification complete enough for execution.
+%RQ2 explores how missions are specificatied. what means, ways or formalisms are used to capture specifications. In modeling the user domains, how are the domain primitives expressed during mission specification? These primitives capture the various mission parameters in RQ1. The expressions can range from structured English grammar expression,drop down list, to graphical icons from domain modeling tools like ecore to logic expressions. in a carefully developed system audio expression can also be used to interact with a robot during mission execution. What actually did we find out during the study?
+
+According to Fernandez-Permomo et al. \cite{Fernandez-Perdomo2010}, mission specification design features can be evaluated qualitatively using parameters like; modularity, flexibility, monitoring, ease of definition among others. Modules in specification environments can be; functions and function calls in \ardublockly, \openroberta, sensor system, motor system in \picaxe, control flow module and the actuator modules.   Flexibly in executing missions from one environment in another especially for the same robot is something to be realized. For instance, mindstorms Ev3 robot is programmed using several graphical languages: \trik, \openroberta, \robotc, \scratchev and its indigenous environment \lego among several other programming environments. However such missions can not be flexibly deployed in other environments other than where it was specified. Monitoring of missions is supported by respective debugging support inform of live monitoring of mission variables in \edison, \aseba and data logging in \codelab. Ease of defining missions can be in form of familiarity in icons used in the graphical notation, if such icons are closer to the end-user domain, then specification becomes easy. easiness can also be measured by number of steps or time required to specify a given mission.
+%Robot programming environments for adult novices ~\cite{Weintrop2018}, blockly goes to work ~\cite{Weintrop2017}

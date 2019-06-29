@@ -1,0 +1,44 @@
+\section{Introduction}
+Over the last decades, robot have become increasingly present in our everyday's life. Consider autonomous service robots that move around freely, following defined missions to accomplish. They replace humans in repetitive, laborious or dangerous activities, often interacting with humans or other robots. The World Robotic Survey\footnote{https://ifr.org/ifr-press-releases/news/world-robotics-survey-service-robots-are-conquering-the-world-} estimates a whopping 35 million indoor service robots to be sold by 2018, accumulating a sales value of \$12 billion since 2015. The global sales of household and personal robots is expected to grow by 23.5\,\% per year\,\cite{sheng:online}, accompanied with progresses in robot technology, especially in image processing, planning, control, and collaboration.
+
+Robotic systems, such as service, industrial, military or space robots, are among the most complex autonomous systems today. Different techniques have been proposed for engineering the various aspects of robotic behavior\,\cite{Fernandez-Perdomo2010,DiRuscio2014,Doherty2013,AtrickD..Ulam2010}. For instance, \citet{Kolling2016} identify core concepts needed to design a human-swarm interaction. A meta evaluation of human-system-interfaces controlling semi-autonomous swarms was conducted by \citet{Hocraffer2017}, who identified advantages, challenges, and limitations of interfaces for unmanned aerial vehicles (UAV). \citet{Mohamed2008} analyze middleware used in robotic engineering to achieve interoperability of components. A taxonomy of multirobot target detection and tracking is provided by \citet{Robin2016}.
+
+Engineering robotics control software is challenging. Especially realizing the behavior of a robot---typically called the robot's mission---has been among the most complex tasks of a robotics software engineer. Developing missions has long required substantial expertise\,\cite{Brugali2009,Aragao2016}, for instance, using logical languages such as LTL or CTL or other intricate formalisms to specify missions\,\cite{Luckcuck2018}.
+However, over the last two decades, a range of more end-user-oriented programming environments appeared, allow to specify the mission of robots in a more user-friendly way, alleviating the need for intricate programming skills not readily available for end-users\,\cite{Weintrop2018,Bozhinoski2016b}. On the other hand, it is exactly those end users who know the details about the missions to achieve.
+
+%The end-users best know what they want the Robots to do for them, but not how to program robots.  Robots could be multi-purpose and developers cannot anticipate all the possible use of the robots. 
+%On the other hand robot engineers and robot software developers understand how the Robot works but are not always familiar with what the End-user expects from the robot system. 
+
+%This calls for End-user programming\,\cite{Weintrop2018}, where users can express in concrete syntax what they expect the robot to do for them.
+
+Researchers and practitioners have invested substantial effort into achieving end-user-oriented programming of robots\,\cite{Weintrop2018,Biggs2003,Bozhinoski2016b,Arts2010,Nordmann2016a}. In fact, almost every commercial mobile robot nowadays is distributed with an environment for programming the behavior, called \emph{mission-specification environment} in the remainder. Such environments rely on dedicated domain-specific languages (DSLs) that end users can utilize to specify missions.
+ %robot programming, using related synonyms like; robot behavior programming, task programming, mission specification, robot visual programming, graphical robot programming as asserted in literature
+One of the first surveys of DSLs in robotics is provided by Nordmann et al.\,\cite{Nordmann2014,Nordmann2016a}; yet, none of the DSLs covers mission specification specifically. While surveys on mission specification techniques and environments exist\,\cite{Biggs2003,Bravo2018,Luckcuck2018},
+none of them covers the area of mission specification environments to understand the key features and how they enhance mission specification. However, most of these language still appear to be relatively low-level and limited to simple behavior specifications.
+
+To build the next generation of mission-specification languages and environments, we need to improve our empirical understanding of the current state-of-the-art in mission specification. Our focus is on end-user-oriented languages providing a visual syntax. In our study, we identify open-source and commercial environments that allow end-user-oriented mission specification of robots. While robot programming environments consider all programmable aspects of the robot system, this study focused on environments in which robot missions are created, designed or particularized. Specifically, we consider a mission specification environment as a collection of tools that facilitate definition and stipulation of robot tasks that form a mission. We study the enrionments' and their languages' main characteristics and capabilities---which we models as features in a feature model\,\cite{kang.ea:1990:foda,damir2019principles}---a common research method. %---pertaining to mission specification. 
+
+%We achieved this by collecting specification environments that exist in the user domains, with their characteristic features and establish how they differ from one another based on the research questions below. 29 environments were selected for the study, language and programming features were extracted and modeled the environments into a feature model to better understand what the languages offer to support end-user programming of robot(s).
+
+%The main goal of the study is to provide language designers with a feature model as an instrument that helps in designing the most suitable language and its associated environment depending on needs at hand. To solve this problem we extract key features that differentiate mission specification environments; with the view of understanding the language features and mission specification concepts implemented in these environments.
+
+We formulated two main research questions:
+
+\textbf{RQ1}: \textit{What visual, end-user-oriented mission specification environments have been presented for mobile robots?}
+We systematically and extensively identify such environments from various sources, including the Google search engine and literature search using snowballing techniques. Among others, this includes open-source, but also commercial environments for which substantial material (e.g., documentation or scientific papers) to analyze them exists.
+
+\textbf{RQ2}: \textit{What is the design space in terms of common and variable characteristics (features) that distinguish the environments?} Our focus is on understanding the concepts that these environments and their languages offer that end-users utilize to specify the missions of mobile robots. We conduct a feature-based analysis, resulting in a feature model detailing our results in terms of features organized in a hierarchy.
+
+%\textbf{RQ3}: How mission specification environments differ?\\
+%By consideration features in the respective environments we seek to identify how environment differs among each other. 
+%This will  help users understanding the most suitable mission specification environment depending on their needs.\\ 
+%\claudio{Notation. choose among end-user and end-user and mission specification and mission specification and be consistent}
+
+We identified a total of 29 environments, whose environment capabilities, general language characteristics, and, most importantly, language concepts we study and organize in a feature model to understand the overall design space of existing environments.
+%language and programming features were extracted and modeled the environments into a feature model to better understand what the languages offer to support end-user programming of robot(s).
+We believe that our work is valuable to practitioners, researchers, and tool builders developing the next generation of mission-specification languages and environments. The feature model shows the mandatory features that all environments have, as well as many optional features only some realized---inspiring future language design.
+
+%The motivation of this study is to provide language designers with empirical understanding of the start-of-the-art in robot mission specification languages in form of a feature model by exploring the language design space and their environments.    
+
+
+%\claudio{Provide a designer with an instrument (the FM) that helps in selecting the most suitable environment depending on her needs).} 
