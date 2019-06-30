@@ -17,7 +17,9 @@ Some environments were installed (I), others are web based (W) while in other we
 
 
 %\begin{comment}
-\parhead{\picaxe} is a programming environment for PICAXE chip based robots like PICAXE 20X2 microbot. The current version PE6 provides graphical programming using either Blockly or Flow chart while text programming is done using Basic with simulation support~\cite{PICAXE}.% The environment has code generation wizards like pwmout and tune to generate code from the graphical notations.
+\parhead{\picaxe} (specifically, Blockly for Picaxe) is a programming environment for PICAXE chip-based robots such as the PICAXE 20X2 microbot. We study the \picaxe editor (PE), which provides textual (in a Basic-style language) and Flowchart-based programming, as well as the tool Blockly for \picaxe, relying on the Blockly library realizing the visual syntax.
+
+%The current version PE6 provides graphical programming using either Blockly or Flow chart while text programming is done using Basic with simulation support~\cite{PICAXE}.% The environment has code generation wizards like pwmout and tune to generate code from the graphical notations.
 %Logicator Flowcharting software is one of the programming techniques used in \picaxe in which flowcharting cells are used build a robot program. Such cells include: start, stop, process, and input.
 %http://www.picaxe.com/Teaching/Logicator-Flowcharting-Software
 
@@ -60,11 +62,11 @@ The textual editing variances include; ModkitText with high level of abstraction
 \begin{figure}[t]
      \centering
     \includegraphics[width=.9\columnwidth]{metabotsample.jpg}
-      \caption{Blockly to assembly code program for \metabot\,\cite{Passault2016} }
+      \caption{Example of \metabot's visual notation (left), together with generated assembler code (right) for it (from\,\cite{Passault2016})}
       \label{metabot}
    \end{figure}
 
-\Figref{metabot} shows a program demonstrating the use of loop control structure with a corresponding assembly code generated ~\cite{Metabot,Passault2016}.
+\Figref{metabot} shows a program demonstrating the use of loop control structure with a corresponding assembler code generated\,\cite{Metabot,Passault2016}.
 
 \parhead{\marty} is a Scratch-based environment for the marty robot. The environment has also customized python to martypy. It is a collection of code that abstracts key robot functions, making it high level for robotic programming as shown in \figref{scratch-marty}\,\cite{Marty}. 
 
@@ -75,8 +77,8 @@ The textual editing variances include; ModkitText with high level of abstraction
       \label{scratch-marty}
    \end{figure}
 
-\parhead{\tello} is also a scratch based mobile application that generates code in python for tello drone %It provides assistance for the unique features, including the landmark maps for recognition and the skipping function between the landmark maps, and multi-machine flying formation\
-,\cite{TelloEduApp}.
+\parhead{\tello} is also a scratch-based application that generates code in Python for the drone Tello %It provides assistance for the unique features, including the landmark maps for recognition and the skipping function between the landmark maps, and multi-machine flying formation\
+\,\cite{TelloEduApp}. The environment is essentially Scratch extended with a library that imports Tello-specific blocks (mainly drone flight controls) into Scratch.
 
 \parhead{\codelab} like most educational environments provides two variants of graphical programming; sandbox for novice programmers and constructor for advanced programmers using scratch blocks to program Cozmo robot,
 %; What makes the constructor mode unique is the extra features like variables, functions and math operators\
@@ -97,8 +99,8 @@ The textual editing variances include; ModkitText with high level of abstraction
 \parhead{\minibloq} is a graphical environment for programming arduino robots like sparki, using icon based blocks, %The environment is suited for kids from age four who are still learning to read/write and any person who has never been introduced to programming 
 ~\cite{miniBloq}. %As an open source environment, more work is been done to accommodate advanced programmers.
   
-\parhead{\turtlebot} has been championed by Dabit industries, the distributors of ROS based turtlebot3 to enable novice programmers to quickly program turtle robots, %This is motivated by blockly's drag and drop feature, which has proved friendly in end-user programming
-~\cite{turtlebot3blockly}. %So far, Turtlebot3blockly supports two variants of turtlebot3, Waffle and Burger. 
+\parhead{\turtlebot} has been championed by Dabit industries, the distributors of ROS based turtlebot3 to enable novice programmers to quickly program the turtle bot%This is motivated by blockly's drag and drop feature, which has proved friendly in end-user programming
+\,\cite{turtlebot3blockly}. It provides a Blockly-based visual syntax and generates Python code for the turtle bot. %So far, Turtlebot3blockly supports two variants of turtlebot3, Waffle and Burger. 
  
 \parhead{\makecode} provides a block-based visual editor and JavaScript based text editor for programming Lego Ev3 robot, %JavaScript code is generated from the visual program, which can be downloaded to the computer to which the Lego robot is connected. Makecode is a platform managed by Microsoft to provide learning environment for programming. The environment provides a simulator for the supported robots
 \,\cite{makecode}.

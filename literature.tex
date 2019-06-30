@@ -13,6 +13,13 @@ A survey on DSLs for robotics by Nordmann et al.\,\cite{Nordmann2016a} identifie
 %analyzed various issues about modelling languages, with negligible work on mission specification in particular.
 Specifically, the survey covered aspects of environmental features and constraints, which are expressed using formalism such as: LTL, OWL, and (E)BNF. While scenario definitions are made using formalisms such as ANTLR grammar, (E)BNF, UML/MOF, LTL or Ecore, all these formalims are best used by robotic and software engineers, but not end users. This gap also motivates our study.
 
+\begin{itemize}
+	\item \citet{bacca.ea:2017:teachingrobots} \tb{Swaib, can you check this one? they list a couple more environments, some of which aren't covered in our survey (actually, you have this publication in the repo, as a material for Edison; did you check the environments they listed in addition to ours?)}
+	\item another argument over the existing surveys: we provide the most complete one, relying on a systematic search process
+	\item 
+\end{itemize}
+
+
 \parhead{Beyond Language-Based Mission Specification}
 Gorostiza et al.\,\cite{Gorostiza2011} propose a natural programming environment in which robot skills are accessed verbally to interact with the end-user. The environment uses dialog system to extract actions and conditions to create a sequence function chart. The challenge with this approach is, the end-user can not add new dialogue construct for new tasks, making the languages inflexible to end-user.
 Miguel Campusano et al.\,\cite{campusano.ea:2017:live} in their work on ``live robot programming'' have implemented a language which supports live  feedback, which helps the end-user in rapid creation and variation of robot behavior at run-time. This approach however does not provide end-user domain constructs to simplify the programming effort during mission specification. Doherty et al \cite{Doherty2013}, propose a framework and architecture for automated specification, generation and execution missions for multiple drones, which collaborate with humans. The focus of the study is on how the language can clearly and concisely specify and generate mission, but not the ease of using the language by end-users.
