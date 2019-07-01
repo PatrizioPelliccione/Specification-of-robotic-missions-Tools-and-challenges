@@ -6,7 +6,7 @@ We now describe how we selected our subjects (\secref{sec:sel}) and how we class
 \looseness=-1
 We are interested in environments that support end-user programming of mobile robots. Such environments should provide domain-specific languages for specifying robotic missions (i.e., behaviors and tasks). %Our focus was on environments targeting novice programmers with graphical notations, which we systematically
 %We identified the environments from the following data sources  using inclusion and exclusion criteria. 
-\Figref{fig:selection} illustrates how the environments were identified from the following data sources.
+%\Figref{fig:selection} illustrates how the environments were identified from the following data sources.
 
 %---including languages that are close to the robotics domain---
 \looseness=-1
@@ -18,19 +18,23 @@ We used three different data sources: (i) input provided by the authors based on
 %Specifically, our identification process involved data collection to identify environment candidates, then applying inclusion-exclusion criteria to the candidates, and finally identifying alternative environments\tb{not clear to me what the last point means}. 
 
 \parhead{Identification of Candidate Environments.}
-As a first step, we identified candidate environments---i.e., software for programming robots mentioned in a source that appeared to fit our study scope, but before applying dedicated inclusion and exclusion criteria (explained shortly)---using the following strategy.
+As a first step, we identified candidate environments, i.e., software for programming robots mentioned in a source that appeared to fit our study scope; then we identified mobile robots and successively looked for additional candidate environments. Then, we applied inclusion and exclusion criteria.
+As shown in \Figref{fig:selection} we used the following strategy:
+%but before applying dedicated inclusion and exclusion criteria (explained shortly)---using the following strategy.
 
-\emph{(a) Environment candidates from experience.} From our past experience in robotics software engineering, we assembled a list of 25 candidate environments.
+\texttt{Step a.} \emph{Environment candidates from experience.} From our past experience in robotics software engineering, we assembled a list of 25 candidate environments.
 
-\emph{(b) List of mobile robots.} We created a list of 59 commercial mobile robots based on our past experience (e.g., we were aware of many educational robots, such as Thymio, Sphero or NAO) and from conducting a Google search (``mobile robot'').
+\texttt{Step b.} \emph{List of mobile robots.} We created a list of 59 commercial mobile robots based on our past experience (e.g., we were aware of many educational robots, such as Thymio, Sphero or NAO) and from conducting a Google search (``mobile robot'').
 %were aware of various robot programming environments, which led to 25 environment candidates. 
 %The authors also created a list of 59 mobile robots based on experience, each person listing any mobile robots that he knows. \patrizio{then we contribute with our experience two different lists, one of non-commercial environments in the first item, and one of commercial environments in this item. At the beginning of the section we only mention one list. This should be clarified: it's confusing.}
 From the robots' web pages, we identified that software that was offered for programming the robot missions, which gave us exactly 59 environment candidates.
 %The respective robot websites and Google search using the robot name as search string  were used to identify the environments in which missions are specified for the robots.
 
-\emph{(c) Google search.} We conducted a search with the search string \emph{("programmable robots" OR ("robot programming" OR "mission specification") environment) "mobile robot"}, which yielded 373 results (note that Google reported 774,000 results, which collapsed into 373 when selecting the last page).
+\texttt{Step c.} \emph{Google search.} We conducted a search with the search string \emph{(``programmable robots" OR (``robot programming" OR ``mission specification") environment) ``mobile robot"}, which yielded 373 results (note that Google reported 774,000 results\patrizio{tried now and my results are 52000!! This string: ("programmable robots" OR ("robot programming" OR "mission specification") environment) "mobile robot"}, which Google search engine collapsed to 373 \patrizio{138 in my case!} while omitting some entries very similar in order to show the most relevant results).
 
-\emph{(d) Snowballing.} Based on a list of six survey papers\,\cite{Biggs2003,Bravo2018,Jost2015,Luckcuck2018,Nordmann2016a,Hentout2017} we were aware of from our experience, we conducted snowballing. Specifically, we identified environment candidates from reading these survey papers and then from reading all papers being cited in each (backwards snowballing) and all papers citing it (forward snowballing), also ignoring duplicates. We identified 12 from \citet{Biggs2003}, 44 from \citet{Bravo2018}, 14 from \citet{Jost2015}, 0 from \citet{Luckcuck2018}, 6 from \citet{Nordmann2016a}, and 7 from \citet{Hentout2017}, totaling 83 candidates.
+%collapsed into 373 when selecting the last page).
+
+\texttt{Step d.} \emph{ Snowballing.} Based on a list of six survey papers\,\cite{Biggs2003,Bravo2018,Jost2015,Luckcuck2018,Nordmann2016a,Hentout2017} we were aware of from our experience, we conducted snowballing. Specifically, we identified environment candidates from reading these survey papers and then from reading all papers being cited in each (backwards snowballing) and all papers citing it (forward snowballing), also ignoring duplicates. We identified 12 from \citet{Biggs2003}, 44 from \citet{Bravo2018}, 14 from \citet{Jost2015}, 0 from \citet{Luckcuck2018}, 6 from \citet{Nordmann2016a}, and 7 from \citet{Hentout2017}, totaling 83 candidates.
 %Snowballing.
 %1.	Six papers were identified
 %2.	From each paper, environments were extracted. 
@@ -113,14 +117,14 @@ In summary, we identified 40 robots from the 26 environments selected, which yie
 
 \subsection{Analysis of Identified Environments (RQ2)}
 \label{sec:extr}
-Our goal was to identify the characteristics that distinguish our subjects in the form of features\,\cite{berger2015feature} and to organize them in a feature model\,\cite{kang.ea:1990:foda,damir2019principles}. Performing such a feature-based analysis is a common method for comparing the design space of technologies, such as model transformations\,\cite{transformationSurvey}, language workbenches\,\cite{erdweg2013languageworkbenches} or variation control systems\,\cite{linsbauer2017gpce}.
+Our goal is to identify the characteristics that distinguish our subjects in the form of features\,\cite{berger2015feature} and to organize them in a feature model\,\cite{kang.ea:1990:foda,damir2019principles}. Performing such a feature-based analysis is a common method for comparing the design space of technologies, such as model transformations\,\cite{transformationSurvey}, language workbenches\,\cite{erdweg2013languageworkbenches} or variation control systems\,\cite{linsbauer2017gpce}.
 
-The data sources for analyzing the identified environments were scientific papers about them, their websites, related documentation (e.g., user manuals or programming guides), and examples of missions expressed in the respective language.
+The data sources for analyzing the identified environments are scientific papers about them, their websites, related documentation (e.g., user manuals or programming guides), and examples of missions expressed in the respective language.
 
  %Features were extracted from papers published on selected environments, environment websites, related documentations and  specification of sample missions. We used indirect data collection where researcher did not interact with the participants in this case the environment developers. The data collection technique was independent since the author only accessed the artifacts like publications, specification environments and related websites to extract data for the study\,\cite{Lethbridge2008}. The following steps were followed to extract features from the selected subjects:
 %\begin{enumerate}
 
-Our strategy was as follows.
+Our strategy is as follows.
 First, in a brainstorming meeting, after an initial screening of the subjects, we identified key features of the environments---mainly representing the top-level and intermediate features in the feature model. Second, we consulted the websites to further identify key features and organize them in a hierarchy. This first skeleton provided the basis for an iterative refinement of the feature model by systematically, for each environment: (i) reading the scientific publications and other technical documentations about the environment; (ii) when possible, downloading and installing the environment to specify example missions, or alternatively for web-based environments, using the online tooling; and (iii) reading through the help menu for better understanding of how the environments are used to specify missions.
 
 \looseness=-1

@@ -1,19 +1,37 @@
+% \begin{table*}
+% \caption{Code generation matrix indicating languages of generated code from the graphical notations\tb{remove the classification according to the notation, just have a two-column table: first column: target language, second column: environment generating it; use the other tables' style}}
+% \label{Codegeneration}
+% \begin{tabular}{ |m{4em}|m{3cm}|m{2cm}|m{2cm}|m{3cm}|m{3cm}|}
+% \hline
+% \textbf{Graphical Notation} &\textbf{C/C++} &\textbf{Java} &\textbf{Java Script} &\textbf{Python}& \textbf{Others}\\
+% \hline
+% Blockly & \robotc, \blocklyprop, \robotmesh, \arcbotics, \openroberta  &\openroberta  & \openroberta, \makecode, \ozoblockly &\openroberta, \turtlebot, \robotmesh & \ardublockly (Arduino code), makebot (assembly code), \\
+% \hline
+% Scratch & &\enchanting, \scratchev, \vex & \sphero   & \tello, \makeblock, \marty & \\
+% \hline
+% State machine & \trik, \choregraphe, \missionlab &   &  \trik ,\choregraphe& \trik \choregraphe& \trik(F\#, PascalABC, NXT OSEK C), \choregraphe (Matlab, .NET), \picaxe(Basic) \\
+% \hline
+% Custom & \easyc, \minibloq, \tivipe & & &\edison &\flyaq(QBL), \aseba (VPL to Aseba event scripting language AESL) \\
+% \hline
+
+% \end{tabular}
+% \end{table*}
+
 \begin{table*}
-\caption{Code generation matrix indicating languages of generated code from the graphical notations\tb{remove the classification according to the notation, just have a two-column table: first column: target language, second column: environment generating it; use the other tables' style}}
-\label{Codegeneration}
-\begin{tabular}{ |m{4em}|m{3cm}|m{2cm}|m{2cm}|m{3cm}|m{3cm}|}
-\hline
-\textbf{Graphical Notation} &\textbf{C/C++} &\textbf{Java} &\textbf{Java Script} &\textbf{Python}& \textbf{Others}\\
-\hline
-Blockly & \robotc, \blocklyprop, \robotmesh, \arcbotics, \openroberta  &\openroberta  & \openroberta, \makecode, \ozoblockly &\openroberta, \turtlebot, \robotmesh & \ardublockly (Arduino code), makebot (assembly code), \\
-\hline
-Scratch & &\enchanting, \scratchev, \vex & \sphero   & \tello, \makeblock, \marty & \\
-\hline
-State machine & \trik, \choregraphe, \missionlab &   &  \trik ,\choregraphe& \trik \choregraphe& \trik(F\#, PascalABC, NXT OSEK C), \choregraphe (Matlab, .NET), \picaxe(Basic) \\
-\hline
-Custom & \easyc, \minibloq, \tivipe & & &\edison &\flyaq(QBL), \aseba (VPL to Aseba event scripting language AESL) \\
-\hline
-
+\caption{Code generation matrix indicating the target generated language and the environments generating the code}
+\label{Code Generation}
+\begin{smaller}
+\begin{tabular}{ m{2cm}m{14.6cm}}
+\toprule
+\textsf{Code Generation} &\textsf{Environment}\\
+\midrule
+%\textbf{graphical} &\\
+C/C++ &  \robotc, \blocklyprop, \robotmesh, \arcbotics, \openroberta, \trik, \choregraphe, \easyc, \minibloq, \tivipe \\
+Java & \openroberta, \enchanting, \scratchev, \vex \\
+ Java Script &  \openroberta, \makecode, \ozoblockly, \sphero, \trik, \choregraphe \\
+Python &  \openroberta, \turtlebot, \robotmesh, \tello, \makeblock, \marty, \trik, \choregraphe, \edison\\
+Others & \ardublockly (Arduino code), \metabot (assembly code), \trik (F\#, PascalABC, NXT OSEK C), \choregraphe (Matlab), \picaxe (Basic), \flyaq (QBL), \aseba (VPL to Aseba event scripting language AESL)\\
+\bottomrule
 \end{tabular}
+\end{smaller}
 \end{table*}
-
