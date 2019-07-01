@@ -1,23 +1,33 @@
-\section{Mission Specification Environments}\label{sec:environments}
+\section{Subject Environments - RQ1}\label{sec:environments}
 
-\tabref{tablelist} lists all identified environments in their studied version, detailing the supported operating system or environment (e.g., web), 
+\tabref{tablelist} lists the environments that we have identified.
+For each environment the table reports  
+(i) the version that has been considered in this study;
+(ii) whether the environments are designed for desktop computers,
+mobile devices or are web based;
+(iii) the mobile robot that is supported and its manufacturer;
+(iv) whether the information reported in this study has been obtained by installing and using the tool, by using the web interface or by consulting the documentation.
+ 
+%\claudio{Update the caption of the table to be a bit more specific}
 
-Some environments were installed (I), others are web based (W) while in other we relied on documentation (D) either as a website, technical documentation or publications about the environments. For environments which are not web based and were not installed, compatibility of software and software policy were  the main reasons for not installing them. Below are the environments selected for this study:
+%\deleted[id=CM]{Some environments were installed (I), others are web based (W) while in other we relied on documentation (D) either as a website, technical documentation or publications about the environments. For environments which are not web based and were not installed, compatibility of software and software policy were  the main reasons for not installing them.}
 
 %\tb{Swaib, can you write a summary about the environments? (not much more than half a page); the original text is commented out below in the Latex file}
 %\tb{is there a difference between block-based and blockly-based?} \swaib{blockly-based is an instance of block-based. Block-based means use of graph blocks/icons to represent programming concepts}
 
+\tb{this section still has too many writing and grammar mistakes, Swaib, can you do a pass?}
+
 
 \begin{figure}[t]
      \centering
-    \includegraphics[width=\columnwidth]{choregraphe.png}
-      \caption{The environment \choregraphe for the NAO robot}
+    \includegraphics[width=\columnwidth]{fig/examples/choregraphe.jpg}
+      \caption{The environment \choregraphe for the robot NAO}
       \label{fig:choregraphe}
    \end{figure}
 
-
+In the following we provide a high-level textual description of the  subject environments identified.\\
 %\begin{comment}
-\parhead{\picaxe} (specifically, Blockly for Picaxe) is a programming environment for PICAXE chip-based robots such as the PICAXE 20X2 microbot. We study the \picaxe editor (PE), which provides textual (in a Basic-style language) and Flowchart-based programming, as well as the tool Blockly for \picaxe, relying on the Blockly library realizing the visual syntax.
+\parhead{\picaxe} (specifically, Blockly for Picaxe) is a programming environment for PICAXE chip-based robots such as the PICAXE 20X2 microbot. The \picaxe editor (PE) provides textual (in a Basic-style language) and Flowchart-based interface %\deleted[id=CM]{, as well as the tool Blockly for \picaxe, relying on the Blockly library realizing the visual syntax}.
 
 %The current version PE6 provides graphical programming using either Blockly or Flow chart while text programming is done using Basic with simulation support~\cite{PICAXE}.% The environment has code generation wizards like pwmout and tune to generate code from the graphical notations.
 %Logicator Flowcharting software is one of the programming techniques used in \picaxe in which flowcharting cells are used build a robot program. Such cells include: start, stop, process, and input.
@@ -26,15 +36,15 @@ Some environments were installed (I), others are web based (W) while in other we
 
 \parhead{\ardublockly} is a Blockly-based graphical environment that generates python code for Arduino boards. The environment is used for programming Spartan robot ~\cite{Spartan}.% and can run on windows, Mac OS X, and Linux operating systems. The editor supports programming based on dragging and dropping of blocks, with code block warning and the code is compatible with variety of Arduino board based . 
 
-\parhead{\openroberta} is a web-based environment for programming a variety of robots. It can either be run on the cloude or installed on a local server. The range of robots that can be programmed in Open Roberta include: Lego Mindstorms EV3, NXT, Calliope mini, micro:bit, Bot' n Roll[beta], Nao [beta], BOB3 [beta] ~\cite{OpenRoberta,Jost2015,Ketterl2015}. %The environment supports code generation in python, java, javascript and C/C++ depending on the particular robot being programmed. The graphical interface implements blockly code blocks for programming the robots. 
+\parhead{\openroberta} is a web-based environment for programming a variety of robots. It can either be run on the cloud  or installed on a local server. The  robots that can be programmed in Open Roberta include: Lego Mindstorms EV3, NXT, Calliope mini, micro:bit, Bot' n Roll[beta], Nao [beta], BOB3 [beta] ~\cite{OpenRoberta,Jost2015,Ketterl2015}. %The environment supports code generation in python, java, javascript and C/C++ depending on the particular robot being programmed. The graphical interface implements blockly code blocks for programming the robots. 
 
-\parhead{\arcbotics} provides block-based programming environment for Sparki robot. The blockly based programs generate C/C++ code for the robot to execute~\cite{ArcboticSparki}. %The colourful blocks help in syntactic support during programming to guide right order of assembling the blocks. 
+\parhead{\arcbotics} provides blockly-based  programming environment for Sparki robot, which generates C/C++ code for the robot to execute~\cite{ArcboticSparki}. %The colourful blocks help in syntactic support during programming to guide right order of assembling the blocks. 
 
 \parhead{\edison} is an environment that provides Edblocks and Edscratch graphical notation while Edpy for textual notation. The current versions of Edison robots supported are V1 and V2 ~\cite{Edison}.%As Edblock provides programming blocks in which programmer provides parameters of a block, Edscratch provides symbolic block which depicts what the block actually does. This makes Edscratch more closer to the user domain. The graphical notations generate code in python 
 
-\parhead{\missionlab} provides a robot programming environment in which events and actions are specified in a state machine with graphical notation for multirobot missions. The missions can be executed on real robots; ATRV-Jr, Urban Robot, AmigoBot, Pioneer AT, Nomad 150 \& 200 or simulated ~\cite{arkin2002missionlab,Ulam2007}.%. During specification, each robot is generated its own state machine to execute. The current version V7 was released in 2006 and run on Red Hat linux, Fedora, Ubuntu, OpenSuse, Debian and CentOS 
+\parhead{\missionlab} is an environment in which the mission is specified through a state machine based graphical language . The missions can be executed on a simulator or on the robots ATRV-Jr, Urban Robot, AmigoBot, Pioneer AT, Nomad 150 \& 200  ~\cite{arkin2002missionlab,Ulam2007}.%. During specification, each robot is generated its own state machine to execute. The current version V7 was released in 2006 and run on Red Hat linux, Fedora, Ubuntu, OpenSuse, Debian and CentOS 
 
-\parhead{\flyaq} is one of the pioneer environments that provides map interface for specifying flight locations, no-fly zones for drones; and automatically generates the flight plan for execution ~\cite{FLYAQ,DiRuscio2014,Bozhinoski2016}.%The environment runs in a virtual environment tailored to support the drone specific drivers needed to execute the missions. FLYAQ is a stack of language ranging from Monitoring mission language which provides interface to user; to behavioral language and the robot language  As an open source environment, extensions can be done to support more variety of robots. 
+\parhead{\flyaq} is a mission specification environment that allows specifying a mission by relying on an actual map of the environment in which the mission has to be executed. It allows users to specify  flight locations, no-fly zones for drones; and  based on these information it automatically generates the flight plan for execution ~\cite{FLYAQ,DiRuscio2014,Bozhinoski2016}.%The environment runs in a virtual environment tailored to support the drone specific drivers needed to execute the missions. FLYAQ is a stack of language ranging from Monitoring mission language which provides interface to user; to behavioral language and the robot language  As an open source environment, extensions can be done to support more variety of robots. 
 
 \parhead{\tivipe} is a visual programming environment that provides graphical notation for end-users to program NAO humanoid robot. The code blocks are abstracted into graphical modules making it a suitable end-user facing ~\cite{TiViPE}.  %"The aim is to let end-users develop software programs in a specific domain, without the need to have experience with textual programming languages" . Active users are psychologists for training children diagnosed with autism using NAO humanoid robot~\cite{Lourens2011}.
 
@@ -105,12 +115,12 @@ The textual editing variances include; ModkitText with high level of abstraction
 \parhead{\makecode} provides a block-based visual editor and JavaScript based text editor for programming Lego Ev3 robot, %JavaScript code is generated from the visual program, which can be downloaded to the computer to which the Lego robot is connected. Makecode is a platform managed by Microsoft to provide learning environment for programming. The environment provides a simulator for the supported robots
 \,\cite{makecode}.
  
-\parhead{\scratchev} is a customized version\,\cite{scratchEv3} of Scratch for Lego Mindstorms Eve3, WeDo, and Micro:bit robots. %As a web-based environment, you are expected to connect the robot to the computer to download and transfer the program to the robot for execution.
+\parhead{\scratchev} is a customized version\,\cite{scratchEv3} of Scratch that allows specifying missions for the Lego Mindstorms Eve3, WeDo, and Micro:bit robots. %As a web-based environment, you are expected to connect the robot to the computer to download and transfer the program to the robot for execution.
 
-\parhead{\enchanting} is another Scratch-based environment for programming Lego Mindstorm NXT robot by novice programmers (children)% The latest version was released in 2014
+\parhead{\enchanting} is a  Scratch-based environment for programming Lego Mindstorm NXT robot by novice programmers (children)% The latest version was released in 2014
 \,\cite{enchanting}.% Enchanting allows the programmer to focus more on the end-user domain model, as its rich visual environment enables the user easily specify the mission for NXT robot.
 
-\parhead{\easyc} provides a graphical, wizard-like interface with drag-drop support for specifying missions for VEX robots%.  The programs are built as flow chart themes in which building blocks are icons of functional units of the program
+\parhead{\easyc} is a graphical mission specification environment that provides a wizard-like interface with drag-drop support for specifying missions for VEX robots%.  The programs are built as flow chart themes in which building blocks are icons of functional units of the program
 \,\cite{EasyC}. %It is tailored for students and teachers with basic programming skills, though it still provides organic C for advanced programmers.
 %http://www.intelitek.com/engineering/easyc/ last accessed on 18th April 2019.
 

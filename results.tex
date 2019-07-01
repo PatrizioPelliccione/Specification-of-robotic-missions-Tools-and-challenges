@@ -22,7 +22,7 @@
 \newcommand{\fblockly}{\f{Blockly}}
 
 
-\section{Design Space}
+\section {Analysis of Identified Environments - RQ2}
 
 \Figref{fig:featuremodel} shows the general structure of the features we identified in our environments. 
 We classified the key, top-level features into (\secref{sec:envfeatures}) capabilities and characteristics of the environments, represented by the features \feditor, \fsimulator, \fdebugging, \fspectime, \fdeployment, and \fmultilang; into (\secref{sec:langcharacteristics}) general language characteristics, represented by the feature \flanguage; and into (\secref{sec:langconcepts}) the actual concepts the languages offer to specify missions, represented by the feature \flangconcepts.
@@ -33,7 +33,7 @@ We classified the key, top-level features into (\secref{sec:envfeatures}) capabi
 %\claudio{What are you going to discuss in the next two sections?}
 
 
-\subsection{Specification Environment Features}\label{sec:envfeatures}
+\subsection{Specification Environment}\label{sec:envfeatures}
 \noindent
 We identified the following distinguishing environment characteristics that are related to the specification of missions.
 %The value in brackets indicates the number of environments offering the optional feature out of 29. While simulator (10/29), multiLanguageSupport (13/29) and debugging (13/29) features are optional. Much as it is desirable to have to have a debugger and a simulator, not all the environments supported these features. 
@@ -74,9 +74,9 @@ Semantic services (feature \fsemanticservices) support developers creating an ab
 
 %and auto-help when activated enables automatic reference when blocks are selected ~\cite{ozobot} as seen in \ozoblockly, \edison.
 
-Finally, the editing mode (feature \feditingmode) typically classifies into parser-based and projectional editing\,\cite{voelter2014projectional,berger2016pe}. In the former, the user edits the source code, which is represented by a sequence of characters in a free form. In the latter, the user's editing gestures directly change the underlying AST, which is projected using projection rules into a user-observable syntax, which can resemble textual and visual syntax, or a combination of both. \Figref{fig:easyc-sidebyside} illustrates the power of projectional editing in the environment \easyc, showing visual and textual syntax side-by-side. The typical continuous enforcement of a correct AST in projectional editing guides users towards correct mission specifications, which can also be seen as a semantic service. For all our environments, given the restriction to visual languages, every environment provides a projectional editor. However, four also offer textual languages, to be used in parallel as an alternative, relying on parser-based editing: \aseba, \vex, \turtlebot and \robotc.
+Finally, the editing mode (feature \feditingmode) typically classifies into parser-based and projectional editing\,\cite{voelter2014projectional,berger2016pe}. In the former, the user edits the source code, which is represented by a sequence of characters in a free form. In the latter, the user's editing gestures directly change the underlying AST, which is projected using projection rules into a user-observable syntax, which can resemble textual and visual syntax, or a combination of both. \Figref{fig:easyc-sidebyside} illustrates the power of projectional editing in the environment \easyc, showing visual and textual syntax side-by-side. The typical continuous enforcement of a correct AST in projectional editing guides users towards correct mission specifications, which can also be seen as a semantic service. For all our environments, given the restriction to visual languages, every environment provides a projectional editor. However, three also offer textual languages, to be used in parallel as an alternative, relying on parser-based editing: \aseba, \vex, and \turtlebot.% and \robotc\tb{where is that stated for \robotc? can you give me the exact source?}.
 
-\parhead{\fmultilang.} A total of 13 of our environments offer multiple languages to specify missions. While at least one visual language is supported (according to our selection criteria), many environments offer at least one more language. For instance, \picaxe provides two visual languages, based on a \fflowchart and a \fblockly notation, respectively, as well as it offers the general-purpose languages Basic and Javascript.
+\parhead{\fmultilang.} A total of 13 of our environments offer multiple languages to specify missions. While at least one visual language is supported (according to our selection criteria), many environments offer at least one more language. For instance, \picaxe provides two visual languages, based on a \fflowchart and a \fblockly notation, respectively, as well as it offers a language with a textual syntax in the style of the programming language Basic, as well as it offers the use of JavaScript.
 
 
 %, and projectional mode where, the program has a standard fixed layout. In projectional editors are structured editors in which a developer works directly on the bstract syntax tree(AST) \cite{berger2016pe}, coding is done using intuitive onscreen visuals.
@@ -88,7 +88,7 @@ Finally, the editing mode (feature \feditingmode) typically classifies into pars
 \parhead{\fdebugging.} A total of 13 of our environments offer debugging support. We found a variety of debugging tools, including the live monitoring of sensor data, the state of actuators, and variables in the environments \picaxe, \aseba, \trik, \flyaq, \easyc, and \edison. The environment \edison offers a box to control inputs, manipulate data, and monitor the use of variables. % -> what was 'bug-box'?
 Interestingly, \makecode communicates execution traces via sound and printing text between the execution of program blocks. % -> not so clear
 We also found the typical break-point mechanism to hold and monitoring executions (e.g., in \robotmesh).
-Furthermore, \openroberta provides a 'check' menu to confirm that the mission specification the robot's configuration matches---important since the environment supports different types of robots. 
+Furthermore, \openroberta provides a 'check' menu\tb{please give me the exact source of this information (paper and position)} to confirm that the mission specification the robot's configuration matches---important since the environment supports different types of robots. 
 % -> this all needs to be verified
 
 \parhead{\fspectime.} Missions are specified either at design time or run-time. Design-time specification provides all the details about the mission before the execution starts.
@@ -135,6 +135,8 @@ All the languages identified in the environments including the textual ones have
    \end{figure}
 
 \parhead{\fnotation.} All our environments offer languages with a domain-specific visual notation (concrete syntax) for end users. For instance, a block \emph{Motor forward} in \trik has a gear icon with a forward arrow depicting a forward-running motor. The user only specifies the motor power and the port in which the motor connects. 13 of our environments additionally offer a textual syntax
+
+\tb{I think I now know how to write this part, will do later; got a lot of insights from looking through the data an the screenshots I took over the weekend}
 %\tb{do you know for how many the textual syntax belongs to the same language (the main, visual language) and for how many it is a separate language (which could also be a gpl)?}.
 
 \begin{itemize}
@@ -159,8 +161,18 @@ Interestingly, \flyaq offers a map-based
 %\tb{so, is that classified as graph-based or block-based, or sth. else?} 
 monitoring mission language to specify missions by clicking on locations where tasks will be executed. 
 
-The textual or visual notations offered by the respective environments are summarized in the Table \ref{notation}. Some environments use a mix of textual and visual notations, like \easyc, as shown in \figref{fig:easyc-sidebyside}, or make use of tables and forms, as \robotc as shown in  %\figref{fig:robotctextual} and 
+The textual or visual notations offered by the respective environments are summarized in \tabref{notation}. Some environments use a mix of textual and visual notations, like \easyc, as shown in \figref{fig:easyc-sidebyside}, or make use of tables and forms, as \robotc as shown in  %\figref{fig:robotctextual} and 
 \figref{fig:robotcgraphical}.
+
+\aseba: \figref{fig:aseba-vpl}
+
+\begin{figure}[b]
+	\centering
+	\includegraphics[width=\columnwidth]{fig/aseba-vpl-event-action-pairs.png}
+	\caption{\aseba's visual notation for its language VPL, which is an event-based language consisting of event-action pairs. One such pair is shown here.}
+	\label{fig:aseba-vpl}
+\end{figure}
+
 
 %Textual: \edison, \choregraphe, 
 %%\tb{choregraphe is definitely visual!},\swaib{the point is it also supports textual notations} 
@@ -187,7 +199,7 @@ The textual or visual notations offered by the respective environments are summa
 
 \begin{figure}[t]
 	\centering
-		\includegraphics[width=\columnwidth]{robotCgraphical.png}	\caption{\robotc, graphical notation (from \cite{Schunn2017}) }
+		\includegraphics[width=\columnwidth]{robotCgraphical.png}	\caption{\robotc, graphical notation (from \cite{Schunn2017})\tb{quality too low; need a higher resolution image; actually, you write that you've installed it, so take a screenshot yourself (taking one yourself should always be done when possible, as opposed to copying from another paper (which requires saying explicitly 'from []' in the caption; this is also the only exception where you can refer directly to a [])}}
 	\label{fig:robotcgraphical}
 \end{figure}
 %\claudio{Missing verb. Which details?} %Secondary notation services provide extra information on the marks and cues used for specification of missions, like; comments, and size of blocks~\cite{Blackwell2001}.
@@ -195,9 +207,11 @@ The textual or visual notations offered by the respective environments are summa
 \input{tables/notationstable.tex}
 
 
-\parhead{\fsemantics} The semantics of our languages are determined by either interpretation or compilation (target code generation). The mission specified is either semantically translated (compiled) as shown in \tabref{Codegeneration} \patrizio{missing table} or interpreted to preserve what is specified and what the robot actually executes. Apart from \lego, and \codelab whose missions are interpreted, all the other 27 environments generate code. \metabot generates assembly code while the rest compile generated code before robot executes the mission.\patrizio{check this sentence. who are other? What do we want to say?}  \trik supports Lego Ev3, Lego NXT, pioneer kit, and the TRIK robot, even though the environment does not cross-compile as missions are robot specific. In the case of Lego EV3, missions are interpreted, with support for both USB and Bluetooth connections.
+\parhead{\fsemantics} The semantics of our languages are determined by either interpretation or compilation (target code generation). The mission specified is either semantically translated (compiled) as shown in \tabref{Codegeneration} or interpreted to preserve what is specified and what the robot actually executes. Apart from \lego, and \codelab whose missions are interpreted, all the other 27 environments generate code. \metabot generates assembly code while the rest compile generated code before robot executes the mission.\patrizio{check this sentence. who are other? What do we want to say?}  \trik supports Lego Ev3, Lego NXT, pioneer kit, and the TRIK robot, even though the environment does not cross-compile as missions are robot specific. In the case of Lego EV3, missions are interpreted, with support for both USB and Bluetooth connections.
 %\tb{this has nothing to do with semantics}. 
-In the case of Lego NXT, besides interpretation, \trik generates Russian C language and NXT OSEK C language, while in the case of TRIK robot, the environment generates Java Script, PascalABC, Python, and F\#.%\tb{why does it generate programs in so many different languages?} \swaib{Russian C, OSEK C are target languages seen in the list, however there is no much documentation about them in the tool documents. I have not figured out why TRI robot missions can be generated into several languages}. \codelab provides support for mission interpretation using Python SDK\tb{unclear, what does that mean?} \swaib{the interpreter was built using python software development kit (SDK)}.
+In the case of Lego NXT, besides interpretation, \trik generates Russian C language\tb{what is that? can you give me a reference to that language?} and NXT OSEK C language\tb{what is that? can you give me a reference?}, while in the case of TRIK robot, the environment generates Java Script, PascalABC, Python, and F\#.%\tb{why does it generate programs in so many different languages?} \swaib{Russian C, OSEK C are target languages seen in the list, however there is no much documentation about them in the tool documents. I have not figured out why TRI robot missions can be generated into several languages}. \codelab provides support for mission interpretation using Python SDK\tb{unclear, what does that mean?} \swaib{the interpreter was built using python software development kit (SDK)}.
+
+\input{tables/codegentable.tex}
 
 %\tb{I just checked \choregraphe, and it does not generate .NET bytecode (which would be MSIL), but it provides language bindings (an API) for .NET so that .NET programs can call API functions of NAO to control it}
 
