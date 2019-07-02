@@ -11,12 +11,6 @@
 
 
 
-\begin{figure}[t]
-     \centering
-    \includegraphics[width=\columnwidth]{fig/examples/choregraphe.jpg}
-      \caption{The environment \choregraphe for the robot NAO}
-      \label{fig:choregraphe}
-   \end{figure}
 
 In the following we provide a high-level textual description of the  subject environments identified (the interested reader might find the complete list of environments in Appendix).\\
 %\begin{comment}
@@ -39,16 +33,17 @@ In the following we provide a high-level textual description of the  subject env
 
 \parhead{\flyaq} is a mission specification environment that allows specifying a mission by relying on an actual map of the environment in which the mission has to be executed. It allows users to specify  flight locations, no-fly zones for drones;  based on these information it automatically generates the flight plan for execution ~\cite{FLYAQ,DiRuscio2014,Bozhinoski2016}.%The environment runs in a virtual environment tailored to support the drone specific drivers needed to execute the missions. FLYAQ is a stack of language ranging from Monitoring mission language which provides interface to user; to behavioral language and the robot language  As an open source environment, extensions can be done to support more variety of robots. 
 
-\parhead{\tivipe} is a visual programming environment that provides graphical notation for end-users to program NAO humanoid robot. The code blocks are abstracted into graphical modules making it a suitable end-users\,\cite{TiViPE}.  %"The aim is to let end-users develop software programs in a specific domain, without the need to have experience with textual programming languages" . Active users are psychologists for training children diagnosed with autism using NAO humanoid robot~\cite{Lourens2011}.
-\tb{from a paper: ``The TiViPE concept of visual programming is to wrap
-a routine that is constructed in a textual programming language
-into a graphically represented unit. The main reason
-for this concept is that there are many software libraries
-available, but due to lack of documentation and a clear
-structure most of these libraries remain unused. By making
-all routine calls available as graphical units together with
-appropriate documentation these routines can be made accessible
-through TiViPE''\,\cite{lourens:2004:tivipe}}
+\parhead{\tivipe} is a visual programming environment\,\cite{lourens:2004:tivipe} that provides support to wrap any program code modules (e.g., functions) of any supported programming language as nodes in a graph, with edges representing control and dataflows. The nodes have input/output ports for different purposes. We consider a tool and a textual language that are integrated with \tivipe, presented by \citet{Lourens2011} and \citet{lourens:2011:tivipe}. Specifically, their language incorporates the API for the NAO humanoid robot, whose programming the authors demonstrate. Since \tivipe was developed by the same authors, and the new tool has no specific name, we will refer ot it as \tivipe in the remainder.
+%provides graphical notation for end-users to program NAO humanoid robot. The code blocks are abstracted into graphical modules making it a suitable end-users\,\cite{TiViPE}.  %"The aim is to let end-users develop software programs in a specific domain, without the need to have experience with textual programming languages" . Active users are psychologists for training children diagnosed with autism using NAO humanoid robot~\cite{Lourens2011}.
+%\tb{from a paper: ``The TiViPE concept of visual programming is to wrap
+%a routine that is constructed in a textual programming language
+%into a graphically represented unit. The main reason
+%for this concept is that there are many software libraries
+%available, but due to lack of documentation and a clear
+%structure most of these libraries remain unused. By making
+%all routine calls available as graphical units together with
+%appropriate documentation these routines can be made accessible
+%through TiViPE''\,\cite{lourens:2004:tivipe}}
 
 \parhead{\aseba} is a collection of graphical and text based tools for programming thymio robots. The visual programming tool provides icons of events and corresponding actions to build a program ~\cite{ASEBA,Magnenat2011}. %The block based version uses blockly to provide program modules in which users edit the program variables to build an executable program. Its text based programming is done using Aseba language. The studio can be installed on Linux, Mac and Windows computers  .
 
@@ -84,9 +79,10 @@ The textual editing variances include ModkitText with high level of abstraction 
 
 \parhead{\marty} is a Scratch-based environment for the marty robot. The environment has also customized python to martypy. It is a collection of code that abstracts key robot functions, making it high level for robotic programming as shown in \figref{scratch-marty}\,\cite{Marty}. 
 
-\begin{figure}[t]
+\begin{figure}[b]
      \centering
-    \includegraphics[width=.5\columnwidth]{ScratchMarty.jpg}
+		\vspace{-.4cm}
+    \includegraphics[width=.45\columnwidth]{ScratchMarty.jpg}
       \caption{Scratch for the robot Marty\,\cite{Marty} }
       \label{scratch-marty}
    \end{figure}
