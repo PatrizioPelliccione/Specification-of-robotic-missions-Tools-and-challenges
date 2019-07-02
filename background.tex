@@ -1,25 +1,26 @@
-\section{Background}
-A typical robot mission is specified by a user by programming a behavior, which the robot exhibits during execution. The mission specified is either compiled into robot executable sequence of instruction or directly interpreted depending on the semantic support. During deployment the executable file is transferred to the robot either by cable connection or wireless. Environments that support live programming enable users to specify such missions at run-time. Visual languages are often based on established third-party libraries such as Blockly \cite{blockly} and Scratch \cite{Kaucic2015}. These are typically customized to incorporate domain-specific blocks as new language concepts---representing robotic and end-user domain mission primitives, such as move forward/backwards, read sensor, and turn right/left.
+\section{Background}\label{sec:background}
+In our work, we consider \emph{mobile robots}---robots with the ability to change their locations in space, including drones, mobile manipulators, mobile platforms, mobile humanoids or vacuum cleaner robots. A typical robot mission is specified by a user by programming a behavior, which the robot exhibits during execution. The mission specified is either compiled into a robot executable sequence of instruction or directly interpreted depending on the semantic support. During deployment, the executable file is transferred to the robot either by cable connection or wireless.
+
+A mission specification environment is a collection of language tools and features with abstraction support for robotics, suitable for the definition and execution of robotic missions.
+We consider \emph{end-user facing environments}, which target non-expert end-users. They are used for the \emph{specification of robotic missions}, the is, the definition of the goal of the robotic application or the tasks that must be performed by the robot(s). Environments that support live programming enable users to specify such missions at run-time.
+
+Visual languages, typically perceived as easier for non-experts to adopt, are often based on established third-party libraries such as Blockly \cite{blockly} and Scratch \cite{Kaucic2015}. These are typically customized to incorporate domain-specific blocks as new language concepts---representing robotic and end-user domain mission primitives, such as move forward/backwards, read sensor, and turn right/left.
 
 %\tb{can you briefly describe the process of mission specification here and how environments look like; for instance, explain the typical libraries, Blockly and Scratch (see below) that are used to realize domain-specific languages}
 
-$\bullet$ \emph{End-user facing:} an environment that is target for being used by non expert end-users. %\deleted[id=CM]{The environment provides concrete syntax to end-users for specifying tasks.}\\
+%\deleted[id=CM]{The environment provides concrete syntax to end-users for specifying tasks.}\\
 
-$\bullet$ \emph{Specification of Robotic mission:} the definition of the goal of the robotic application or the tasks that must be performed by the robot(s).
 
-$\bullet$ \emph{Specification  Environment:} a collection of language tools and features with abstraction support for robotics and end-users, suitable for the definition and execution of robotic missions.
-
-$\bullet$ \emph{Mobile Robots:} robots with ability to change  their locations in space like: drones, mobile manipulators, mobile platforms, mobile humanoids, vacuum cleaner robots.
-
-$\bullet$ \emph{Declarative vs imperative mission:} a declarative mission allows end-users to specify what to be achieved i.e., a mission goal without saying how the goal is achieved. While an  imperative mission allows end-users to specify the precise actions and movements to be accomplished in order to satisfy the mission goal. % set of tasks in their order of execution. %Imperative  mission specification  are usually specified by user domain experts who exactly know how the mission tasks are executed.\\
-
-$\bullet$ \emph{Block:} a graphical symbol or icon  which represents  a language construct; for example ``moves steering" block in LEGO, ``if do else" block in Open Roberta ~\cite{OpenRoberta}. Blocks are used to build a mission. %\\ %\claudio{Remove (comment)}
-
-$\bullet$ \emph{Blockly:} is a library proposed by Google\,\cite{blockly}, which provides support for creating graphical notations, where each block represents a programming concept. %The library is used for building web based and mobile applications with graphical notations.\\ https://developers.google.com/blockly/guides/overview %\claudio{Remove Blockly (comment)}
+Specifically, \emph{Blockly:} is a library developed by Google\,\cite{blockly} that provides support for creating graphical notations, where each block represents a programming concept. %The library is used for building web based and mobile applications with graphical notations.\\ https://developers.google.com/blockly/guides/overview %\claudio{Remove Blockly (comment)}
 %Common examples we captured in this study include Google
 %Blockly blocks enforce semantic correctness of the program by allowing two blocks to connect only if they make semantic sense\tb{no, that's not what Blockly can do, that's the responsibility of the semantics realization of the actual DSL of each environment}.
 %Code can be generated as; python, JavaScript or PHP.
-The library can be extended to define new blocks, support functions, and procedures. Blockly allows access to the parse tree, and is flexible to generate code in target language\,\cite{Passault2016}. Scratch is a variant of Blockly created by the Massachusetts Institute of Technology media laboratory. It can be used to create stories, games, animations, music and art projects~\cite{Kaucic2015}. The library can be extended by adding custom blocks to suit needs of the end-user domain. %\tb{also explain scratch as a library, similar to blockly}
+The library can be extended to define new blocks, support functions, and procedures. Blockly allows access to the parse tree, and is flexible to generate code in target language\,\cite{Passault2016}.
+\emph{Scratch} is similar to Blockly, but created earlier by the Massachusetts Institute of Technology media laboratory. It can be used to create stories, games, animations, music and art projects\,\cite{Kaucic2015}. The library can be extended by adding custom blocks to suit needs of the end-user domain. %\tb{also explain scratch as a library, similar to blockly}
+Finally, as we will show, some environments also rely on custom notations, such as block diagrams, where a block is a graphical symbol or icon that represents a language construct. Their composition in a diagram constitutes a mission.
+
+%; for example ``moves steering" block in LEGO, ``if do else" block in Open Roberta ~\cite{OpenRoberta}. Blocks are used to build a mission. %\\ %\claudio{Remove (comment)}
+
 
 %\parhead{Educational Robotics}
 %Mobile robots have been recognized as an ideal vehicle to teach basic programming skills to children and students. As such, a large variety of educational robots has been proposed, such as Lego Mindstorms, Softbank Robotics' NAO or Pepper\tb{to be continued}
