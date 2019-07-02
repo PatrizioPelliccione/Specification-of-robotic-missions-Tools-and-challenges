@@ -2,3 +2,10 @@
 Mobile robot system have become robust in terms of number of actuator in a single robot and  availability of more variety of sensors systems. This makes it unrealistic to have the robots hard-coded at manufacturing time. It is also unrealistic to keep relying on robotic and software engineer to always be the ones to program the robots. A lot of effort has been put in enabling end-users who are experts in aspects of everyday life to program and specify missions for robots. This has been tested feasible by use of visual programming languages. However, there has not been any organized literature on related features in such environments and languages. In this survey, we have studied the language design space of 29 specification environments and extracted mandatory and optional features, which these environments offer to support end-user programming of robots in aspects of everyday life. We present this as a feature model and further analyzed how the environments differ from each other.   
 
 %Challenges RMSE face and how they can best be handled
+
+\begin{itemize}
+	\item actions are often very concrete and every actions is its own language concept
+	\item the actions represent discrete and continuous behavior, but for realizing more complex behavior that is not built into the languages, only discrete can be constructed, i.e., we did not find any means for users to specify custom continuous behavior
+	\item otherwise, surprisingly many typical constructs from general-purpose languages found, which are provided using visual syntax
+	\item languages rather low-level; not goal-oriented; some provided functionality is goal-oriented (e.g., stand up in \choregraphe, requiring planners), but in the future we'll likely need pure goal-based control-flow paradigms \tb{Patrizio, can you discuss sth. based on your WASP proposal?}
+\end{itemize}

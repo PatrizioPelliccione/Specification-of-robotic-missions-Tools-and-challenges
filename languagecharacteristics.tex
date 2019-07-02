@@ -16,7 +16,9 @@ All the languages identified in the environments including the textual ones have
       \label{fig:languagefeatures}
    \end{figure}
 
-\parhead{\fnotation.} All the environments offer languages with a domain-specific visual notation (concrete syntax) for their end-users. We classify the notations into:
+\parhead{\fnotation.} All the environments offer languages with a domain-specific visual notation (concrete syntax) for their end-users. The textual and visual notations offered by the respective environments are summarized in \tabref{notation}.
+
+We classify the notations into:
 
 \begin{itemize}
 	\item \f{Tree-Based} syntax, as realized using the Blockly or Scratch libraries (cf. \secref{sec:background}). An example of the former is shown in \figref{metabot}, and of the latter in \figref{scratch-marty}. But, this kind of syntax is also realized with own implementations in some environments, such as \robotc, as shown in \figref{fig:robotcgraphical}.
@@ -24,15 +26,13 @@ All the languages identified in the environments including the textual ones have
 	\robotmesh, and %flowchat in
 	\picaxe, which use connectors between nodes (blocks) to form graph-like structures. 
 	%\item forms and tables as shown in Figure \ref{fig:robotcgraphical}
-	\item \f{Custom} syntax. \flyaq offers a map-based mission language to specify (drone monitoring) missions by clicking on locations where tasks shall be executed. \aseba essentially has vertical lists of even-action pairs, as shown in \figref{fig:aseba-vpl}. Finally, we found customized block diagrams such as in \lego, as shown in \figref{fig:legoloopcount}, which is essentially a graph, but we classified separately due to the different kind of connectors (blocks are adjacent when connected, not using line edges).
+	\item \f{Custom} syntax. For instance, \flyaq offers a map-based mission language to specify (drone monitoring) missions by clicking on locations where tasks shall be executed. \aseba essentially has vertical lists of even-action pairs, as shown in \figref{fig:aseba-vpl}. Finally, we found customized block diagrams such as in \lego, as shown in \figref{fig:legoloopcount}, which is essentially a graph, but we classified separately due to the different kind of connectors (blocks are adjacent when connected, not using line edges).
 \end{itemize}
 
 
 Almost every syntax
 %(\tivipe is an exception, for instance)
 is customized with robotics-domain-specific figures, such as icons. For instance, a block \emph{Motor forward} in \trik has a gear icon with a forward arrow depicting a forward-running motor. The user only specifies the motor power and the port in which the motor connects. 13 of our environments additionally offer a textual syntax, often by just allowing the use of a general-purpose language in parallel to the primary visual DSL. Some environments use a mix of textual and visual notations, like \easyc, as shown in \figref{fig:easyc-sidebyside}.
-
-The textual and visual notations offered by the respective environments are summarized in \tabref{notation}. 
 
 \begin{figure}[t]
 \vspace{-.4cm}
@@ -91,9 +91,9 @@ The textual and visual notations offered by the respective environments are summ
 
 \begin{figure}[t]
 	\centering
-		\includegraphics[width=\columnwidth]{robotc2.png}	\caption{\robotc's visual notation (from \cite{Admin})%\tb{quality too low; need a higher resolution image; actually, you write that you've installed it, so take a screenshot yourself (taking one yourself should always be done when possible, as opposed to copying from another paper (which requires saying explicitly 'from []' in the caption; this is also the only exception where you can refer directly to a [])}
-		}
+		\includegraphics[width=.8\columnwidth]{robotc2.png}	\caption{\robotc's visual notation (from \cite{Admin})}
 	\label{fig:robotcgraphical}
+	\vspace{-.4cm}
 \end{figure}
 %\claudio{Missing verb. Which details?} %Secondary notation services provide extra information on the marks and cues used for specification of missions, like; comments, and size of blocks~\cite{Blackwell2001}.
 

@@ -19,22 +19,29 @@ We used three different data sources: input provided by the authors based on exp
 
 \parhead{Identification of Candidate Environments.}
 As a first step, we identified candidate environments, i.e., software for programming robots mentioned in a source that appeared to fit our study scope; then we identified mobile robots and successively looked for additional candidate environments. Then, we applied inclusion and exclusion criteria.
-As shown in \Figref{fig:selection} we used the following strategy:
+As shown in \figref{fig:selection} we used the following strategy:
 %but before applying dedicated inclusion and exclusion criteria (explained shortly)---using the following strategy.
 
-\texttt{Step a.} \emph{Environment candidates from experience.} From our past experience in robotics software engineering, we assembled a list of 25 candidate environments.
+%\texttt{Step a.}  % -> would be confusing with the three main steps
+\emph{Environment candidates from experience.} From our past experience in robotics software engineering, we assembled a list of 25 candidate environments.
 
-\texttt{Step b.} \emph{List of mobile robots.} We created a list of 59 commercial mobile robots based on our past experience (e.g., we were aware of many educational robots, such as Thymio, Sphero or NAO) and from conducting a Google search (``mobile robot'').
+%\texttt{Step b.}
+\emph{List of mobile robots.} We created a list of 59 commercial mobile robots based on our past experience (e.g., we were aware of many educational robots, such as Thymio, Sphero or NAO) and from conducting a Google search (``mobile robot'').
 %were aware of various robot programming environments, which led to 25 environment candidates. 
 %The authors also created a list of 59 mobile robots based on experience, each person listing any mobile robots that he knows. \patrizio{then we contribute with our experience two different lists, one of non-commercial environments in the first item, and one of commercial environments in this item. At the beginning of the section we only mention one list. This should be clarified: it's confusing.}
 From the robots' web pages, we identified that software that was offered for programming the robot missions, which gave us exactly 59 environment candidates.
 %The respective robot websites and Google search using the robot name as search string  were used to identify the environments in which missions are specified for the robots.
 
-\texttt{Step c.} \emph{Google search.} We conducted a search with the search string \emph{(``programmable robots" OR (``robot programming" OR ``mission specification") environment) ``mobile robot"}, which yielded 373 results (note that Google reported 774,000 results\patrizio{tried now and my results are 52000!! This string: ("programmable robots" OR ("robot programming" OR "mission specification") environment) "mobile robot"}, which Google search engine collapsed to 373 \patrizio{138 in my case!} while omitting some entries very similar in order to show the most relevant results).
+%\texttt{Step c.}
+\looseness=-1
+\emph{Google search.} We conducted a search with the string \emph{(``programmable robots" OR (``robot programming" OR ``mission specification") environment) ``mobile robot"}, which yielded 373 results (note that Google reported 774,000 results%\patrizio{tried now and my results are 52000!! This string: ("programmable robots" OR ("robot programming" OR "mission specification") environment) "mobile robot"}
+, which Google search engine collapsed to 373 %\patrizio{138 in my case!}
+while omitting some entries very similar in order to show the most relevant results).
 
 %collapsed into 373 when selecting the last page).
 
-\texttt{Step d.} \emph{ Snowballing.} Based on a list of six survey papers\,\cite{Biggs2003,Bravo2018,Jost2015,Luckcuck2018,Nordmann2016a,Hentout2017} we were aware of from our experience, we conducted snowballing. Specifically, we identified environment candidates from reading these survey papers and then from reading all papers being cited in each (backwards snowballing) and all papers citing it (forward snowballing), also ignoring duplicates. We identified 12 from \citet{Biggs2003}, 44 from \citet{Bravo2018}, 14 from \citet{Jost2015}, 0 from \citet{Luckcuck2018}, 6 from \citet{Nordmann2016a}, and 7 from \citet{Hentout2017}, totaling 83 candidates.
+%\texttt{Step d.}
+\emph{ Snowballing.} Based on a list of six survey papers\,\cite{Biggs2003,Bravo2018,Jost2015,Luckcuck2018,Nordmann2016a,Hentout2017} we were aware of from our experience, we conducted snowballing. Specifically, we identified environment candidates from reading these survey papers and then from reading all papers being cited in each (backwards snowballing) and all papers citing it (forward snowballing), also ignoring duplicates. We identified 12 from \citet{Biggs2003}, 44 from \citet{Bravo2018}, 14 from \citet{Jost2015}, 0 from \citet{Luckcuck2018}, 6 from \citet{Nordmann2016a}, and 7 from \citet{Hentout2017}, totaling 83 candidates.
 %Snowballing.
 %1.	Six papers were identified
 %2.	From each paper, environments were extracted. 
